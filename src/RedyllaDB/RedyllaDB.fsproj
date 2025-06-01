@@ -10,7 +10,7 @@
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <Description>RedyllaDB is a .NET SDK client for ScyllaDB that mimics the API layer of StackExchange.Redis</Description>
+        <Description>RedyllaDB is a .NET SDK client for ScyllaDB, written in F#, that mimics the API layer of StackExchange.Redis</Description>
         <Title>RedyllaDB</Title>
         <OtherFlags>$(OtherFlags) --test:GraphBasedChecking --test:ParallelOptimization --test:ParallelIlxGen</OtherFlags>
     </PropertyGroup>
