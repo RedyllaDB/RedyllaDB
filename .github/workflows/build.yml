@@ -1,0 +1,31 @@
+name: build
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 8.x.x
+
+    -   name: Docker Compose Up
+        run: docker compose up -d
+
+    -   name: Build
+        run: dotnet build
+
+    -   name: Test
+        run: dotnet test --no-build --verbosity normal
+
+    -   name: Docker Compose Down
+        run: docker compose down
