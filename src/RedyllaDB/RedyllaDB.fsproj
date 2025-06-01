@@ -26,6 +26,10 @@
     </ItemGroup>
 
     <ItemGroup>
+        <None Include="../../LICENSE" Pack="true" Visible="false" PackagePath="" />        
+    </ItemGroup>
+    
+    <ItemGroup>
       <PackageReference Include="CassandraCSharpDriver" Version="3.22.0" />
       <PackageReference Include="StackExchange.Redis" Version="2.8.24" />
       <PackageReference Include="System.IO.Hashing" Version="9.0.5" />
