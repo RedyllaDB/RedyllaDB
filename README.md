@@ -2,6 +2,9 @@
 
 Redis + ScyllaDB = RedyllaDB :heart:
 
+[![NuGet](https://img.shields.io/nuget/v/RedyllaDB.svg)](https://www.nuget.org/packages/RedyllaDB/)
+[![Nuget](https://img.shields.io/nuget/dt/RedyllaDB.svg)](https://www.nuget.org/packages/RedyllaDB/)
+
 RedyllaDB is a .NET client for ScyllaDB that mimics the API layer of [StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/). The main goal is to provide a way to migrate basic Redis workloads to ScyllaDB with minimal changes to the existing codebase. 
 
 ## Getting started
