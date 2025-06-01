@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>        
+        <TargetFramework>netstandard2.1</TargetFramework>        
+        <Version>0.1.0</Version>        
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <RepositoryUrl>https://github.com/RedyllaDB/RedyllaDB</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>RedyllaDB is a .NET SDK client for ScyllaDB that mimics the API layer of StackExchange.Redis</Description>
+        <Title>RedyllaDB</Title>
+        <OtherFlags>$(OtherFlags) --test:GraphBasedChecking --test:ParallelOptimization --test:ParallelIlxGen</OtherFlags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Utils.fs" />                
+        <Compile Include="Storage\ScyllaQueries.fs" />
+        <Compile Include="Storage\ScyllaOperations.fs" />
+        <Compile Include="API\IDatabase.fs" />
+        <Compile Include="API\IConnectionMultiplexer.fs" />
+        <Compile Include="Client\RedyllaDbClient.fs" />
+        <Compile Include="Client\ConnectionMultiplexer.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CassandraCSharpDriver" Version="3.22.0" />
+      <PackageReference Include="StackExchange.Redis" Version="2.8.24" />
+      <PackageReference Include="System.IO.Hashing" Version="9.0.5" />
+      <PackageReference Update="FSharp.Core" Version="9.0.300" />
+    </ItemGroup>
+
+</Project>
