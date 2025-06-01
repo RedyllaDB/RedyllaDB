@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global items", "global items", "{C5F979F4-CF9A-40F3-8E02-B0C06535173A}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
+		docker-compose-tests.yml = docker-compose-tests.yml
 	EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RedyllaDB", "src\RedyllaDB\RedyllaDB.fsproj", "{C37CD71E-438B-4214-B100-8810394A569B}"

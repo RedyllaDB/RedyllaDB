@@ -1,0 +1,59 @@
+services:
+
+  redis:
+    image: 'redis:7.0.2'
+    #        command: 'redis-server --save "30 1000" --appendonly yes --requirepass "" '
+    command: 'redis-server --save "" --appendonly no --requirepass "" '
+    #        command: 'redis-server /usr/local/etc/redis/redis.conf'
+    volumes:
+      - './redis-data:/data'
+    #            - './redis-config/redis.conf:/usr/local/etc/redis/redis.conf'
+    ports:
+      - '6379:6379'
+
+  scylla:
+    container_name: scylla
+    image: scylladb/scylla:6.2.3
+    restart: always
+    command: --smp 1 --memory 750M --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll
+    ports:
+      - "9042:9042" # CQL Port             
+    networks:
+      web:
+      
+#  scylla-node1:
+#    container_name: scylla-node1
+#    image: scylladb/scylla:6.2.3
+#    restart: always
+#    command: --seeds=scylla-node1,scylla-node2 --smp 1 --memory 750M --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll        
+#    ports:
+#      - "9042:9042" # CQL Port             
+#    networks:
+#      web:
+#        
+#  scylla-node2:
+#    container_name: scylla-node2
+#    image: scylladb/scylla:6.2.3
+#    restart: always
+#    command: --seeds=scylla-node1,scylla-node2 --smp 1 --memory 750M --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll    
+#    ports:
+#      - "9043:9042"    
+#    networks:
+#      web:        
+#
+#  scylla-node3:
+#    container_name: scylla-node3
+#    image: scylladb/scylla:6.2.3    
+#    command: --seeds=scylla-node1,scylla-node2 --smp 1 --memory 750M --overprovisioned 1 --api-address 0.0.0.0 --reactor-backend=epoll    
+#    ports:
+#      - "9044:9042"    
+#    networks:
+#      web:
+    
+networks:
+  web:
+    driver: bridge
+    
+volumes:
+  scylla:
+    driver: local    
